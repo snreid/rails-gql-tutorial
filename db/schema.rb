@@ -21,19 +21,19 @@ ActiveRecord::Schema.define(version: 2021_06_05_163757) do
 
   create_table "comments", force: :cascade do |t|
     t.text "body"
-    t.integer "posts_id"
+    t.integer "post_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["posts_id"], name: "index_comments_on_posts_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "body"
-    t.integer "authors_id"
+    t.integer "author_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["authors_id"], name: "index_posts_on_authors_id"
+    t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
 end
